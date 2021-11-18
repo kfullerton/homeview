@@ -39,7 +39,6 @@ class TextWidget extends StatelessWidget {
         width: config['width'],
         height: config['height'],
         child: Container(
-          // color: Colors.green[300],
           color: config['data']['fillcolor'],
           child: Text(
             config['data']['text'],
@@ -48,16 +47,3 @@ class TextWidget extends StatelessWidget {
         ));
   }
 }
-
-
-// Positioned(
-//                 left: x['left'],
-//                 right: x['right'],
-//                 top: x['top'],
-//                 bottom: x['bottom'],
-//                 width: x['width'],
-//                 height: x['height'],
-//                 child: TextBox(
-//                     text: x['data']['text'],
-//                     textColor: x['data']['textcolor'],
-//                     fillColor: x['data']['fillcolor'])));

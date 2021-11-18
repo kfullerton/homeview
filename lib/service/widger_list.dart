@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:homeview/ui/widgets/text_box.dart';
+import 'package:homeview/ui/widgets/analog_clock_widget.dart';
 
 class WidgetList {
   List<Map> dlist = [
@@ -30,13 +31,40 @@ class WidgetList {
     {
       "top": 0,
       "left": 0,
-      "height": 250,
-      "width": 250,
-      "type": "text",
+      "height": 450,
+      "width": 450,
+      "type": "analog_clock",
       "data": {
-        "text": "Green",
-        "fillcolor": Colors.green[300],
-        "textcolor": Colors.white
+        "text": "",
+        "dialPlateColor": Colors.black,
+        "hourHandColor": Colors.white,
+        "minuteHandColor": Colors.white,
+        "secondHandColor": Colors.white,
+        "numberColor": Colors.green,
+        "borderColor": Colors.white,
+        "tickColor": Colors.white,
+        "centerPointColor": Colors.white,
+        "showBorder": true,
+        "showTicks": false,
+        "showMinuteHand": true,
+        "showSecondHand": true,
+        "showNumber": true,
+        "borderWidth": 1.0,
+        "hourNumberScale": 1,
+        "hourNumbers": [
+          '',
+          '',
+          'III',
+          '',
+          '',
+          'VI',
+          '',
+          '',
+          'IX',
+          '',
+          '',
+          'XII'
+        ]
       }
     },
     {
@@ -60,18 +88,12 @@ class WidgetList {
       switch (x['type']) {
         case 'text':
           {
-            // rlist.add(Positioned(
-            //     left: x['left'],
-            //     right: x['right'],
-            //     top: x['top'],
-            //     bottom: x['bottom'],
-            //     width: x['width'],
-            //     height: x['height'],
-            //     child: TextBox(
-            //         text: x['data']['text'],
-            //         textColor: x['data']['textcolor'],
-            //         fillColor: x['data']['fillcolor'])));
             rlist.add(TextWidget(config: x));
+          }
+          break;
+        case 'analog_clock':
+          {
+            rlist.add(AnalogClock(config: x));
           }
           break;
       }

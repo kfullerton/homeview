@@ -28,6 +28,7 @@ class _DashboardState extends State<Dashboard> {
         ),
         body: Container(
           padding: const EdgeInsets.all(10),
+          color: Colors.black,
           child: Stack(children: wlist),
         ));
   }
