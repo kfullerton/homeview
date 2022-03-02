@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:homeview/ui/widgets/text_box.dart';
 import 'package:homeview/ui/widgets/analog_clock_widget.dart';
+import 'package:homeview/ui/widgets/iframeweather.dart';
 
 class WidgetList {
   List<Map> dlist = [
@@ -31,8 +32,8 @@ class WidgetList {
     {
       "top": 0,
       "left": 0,
-      "height": 450,
-      "width": 450,
+      "height": 250,
+      "width": 250,
       "type": "analog_clock",
       "data": {
         "text": "",
@@ -70,9 +71,9 @@ class WidgetList {
     {
       "top": 0,
       "right": 0,
-      "height": 250,
-      "width": 250,
-      "type": "text",
+      "height": 350,
+      "width": 550,
+      "type": "iframeweather",
       "data": {
         "text": "Blue",
         "fillcolor": Colors.blue[300],
@@ -94,6 +95,11 @@ class WidgetList {
         case 'analog_clock':
           {
             rlist.add(AnalogClock(config: x));
+          }
+          break;
+        case 'iframeweather':
+          {
+            rlist.add(IFrameWeather(config: x));
           }
           break;
       }
